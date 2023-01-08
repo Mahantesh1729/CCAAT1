@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<br>
+<br>
+<h2 style="color: white;">{% block title %} {{ post['title'] }} {% endblock %}</h2>
+<span class="badge" style="color: black;">{{ post['created'] }}</span>
+<br>
+<br>
+<p style="color: rgb(217, 236, 171); font-size: medium;">{{ post['content'] }}</p>
+<a href="{{ url_for('edit', id=post['id']) }}">
+    <span class="badge text-bg-warning">Edit</span>
+</a>
+{% endblock %}
